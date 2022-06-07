@@ -55,16 +55,17 @@
                 del(index){
                     this.list.splice(index,1)
                 },
-                allshop(){
+                allshop(){//商品总数量
                     let num=0;
                     for(var i in this.list){
                         if(this.list[i].isSel){
                             num+=parseInt(this.list[i].id)
                         }
                     }
-                    return num
+                    return num,
+                    console.log(num)
                 },
-                allmoney(){
+                allmoney(){//商品总价格
                     let arr=[...this.list];
                       let num=0;
                         for(var i in this.list){ 
@@ -72,9 +73,10 @@
                             num+=arr[i].price*arr[i].id
                         }
                     }
-                    return num
+                    return num,
+                    console.log(num)
                 },
-                box_go(){  
+                box_go(){  //商品选择框
                     if(this.box){
                         for(var i in this.list){
                             this.list[i].isSel=true
@@ -86,7 +88,7 @@
                         }
                         this.box=1;
                     }               
-                }
+                },          
             },
             data:{
                 box:1,
